@@ -23,10 +23,12 @@ try:
         if str(last_message.user_id) != str(cl.user_id):
             text = last_message.text.lower() if last_message.text else ""
             
-            if "بافت" in text:
-                reply_text = "سلام! خوش آمدید. برای مشاهده قیمت‌ها لطفا در سایت ما ثبت‌نام کنید."
+           # بررسی کلمه «سمکو» در پیام کاربر
+            if "سمکو" in text:
+                reply_text = "سلام! خوش آمدید. پیام شما با کلمه کلیدی سمکو دریافت شد."
             else:
                 reply_text = "سلام! پیام شما خودکار دریافت شد."
+                
                 
             cl.direct_send(reply_text, thread.id)
             print("Auto-reply sent!")
