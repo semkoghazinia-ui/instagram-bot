@@ -2,7 +2,7 @@ name: Run Instagram Bot
 
 on:
   schedule:
-    - cron: '*/1 * * * *' # هر 1 دقیقه یکبار اجرا شود
+    - cron: '* * * * *' # این علامت یعنی هر ۱ دقیقه یک‌بار
   workflow_dispatch:
 
 jobs:
