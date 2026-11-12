@@ -16,22 +16,18 @@ except Exception as e:
     exit(1)
 
 try:
-    # بررسی دایرکت‌ها فقط یک بار در هر بار اجرا
+    # بررسی دایرکت‌ها (تعداد ۳ گفتگوی آخر)
     threads = cl.direct_threads(amount=3)
     for thread in threads:
         last_message = thread.messages[0]
         if str(last_message.user_id) != str(cl.user_id):
             text = last_message.text.lower() if last_message.text else ""
             
-           # بررسی کلمه «سمکو» در پیام کاربر
+            # بررسی اینکه آیا کلمه «سمکو» در متن پیام کاربر وجود دارد یا خیر
             if "سمکو" in text:
                 reply_text = "سلام! خوش آمدید. پیام شما با کلمه کلیدی سمکو دریافت شد."
-            else:
-                reply_text = "سلام! پیام شما خودکار دریافت شد."
-                
-                
-            cl.direct_send(reply_text, thread.id)
-            print("Auto-reply sent!")
+                cl.direct_send(reply_text, thread.id)
+                print("Auto-reply sent for keyword!")
             
     print("بررسی دایرکت‌ها به اتمام رسید.")
 except Exception as e:
