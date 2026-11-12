@@ -23,7 +23,7 @@ try:
         if str(last_message.user_id) != str(cl.user_id):
             text = last_message.text.lower() if last_message.text else ""
             
-            if "قیمت" in text:
+            if "بافت" in text:
                 reply_text = "سلام! خوش آمدید. برای مشاهده قیمت‌ها لطفا در سایت ما ثبت‌نام کنید."
             else:
                 reply_text = "سلام! پیام شما خودکار دریافت شد."
